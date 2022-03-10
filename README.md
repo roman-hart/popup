@@ -11,4 +11,6 @@ Pop-up message that appears when the page loads if user's IP is from particular 
 
 Just copy the code from <a href="https://github.com/roman-hart/popup/blob/main/for_russia.html">for_russia.html</a> in the end of your site code (before `</body>`).
 
-<sup>#StandWithUkraine #StopRussia #SendNatoToUkraine #CloseTheSky #BanRussiafromSwift #ukrainewar #war #UkrainianConflict #webdevelopers</sup>
+<br>
+
+<sup><sup>#StandWithUkraine #StopRussia #SendNatoToUkraine #CloseTheSky #BanRussiafromSwift #ukrainewar #war #UkrainianConflict #webdevelopers</sup></sup>
