@@ -1,0 +1,40 @@
+<!-- Pop-up code start. Source: github.com/roman-hart/popup/ Design by support-ukraine-now.webflow.io -->
+<script>
+/* General settings */
+var header1 = `<h2>Дорогие жители России</h2>`
+var text1 = `<p>24 февраля 2022 года российские войска начали вторжение в Украину. Мы знаем, что вы, обычный человек, не виноваты. Но ваши лидеры решили вторгнуться в европейскую страну без какой-либо легитимации. Мы просим вас протестовать в социальных сетях и на улицах, чтобы потребовать от ваших лидеров остановить это вторжение. Мир и дипломатия — единственный путь к лучшему миру.</p><p>Поддержите Украину здесь → <a href="https://helpukrainewin.org/">https://helpukrainewin.org/</a></p>`
+var header2 = `<h2>Dear people of Russia</h2>`
+var text2 = `<p>On Feb 24, 2022 Russian forces started invading Ukraine. We know you, a regular person, are not to blame. But your leaders have chosen to invade a European country without any legitimation.</p><p>We ask you to protest in social media and in the streets to demand your<br>leaders stop this invasion. Peace and diplomacy are the only way towards a better world.</p><p>Support the Ukraine here → <a href="https://helpukrainewin.org/">https://helpukrainewin.org/</a></p>`
+var countryCodes = ["RU", ];  // Country ISO 3166-1 alpha-2 codes to trigger pop-up, possible options: RU, UA, BY, US, etc.
+
+var popupBlock = `<style>
+.popup-outer{position:absolute;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100vw;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}
+.popup-inner{width:80%;max-width:840px;margin-top:80px;margin-bottom:20px;padding:30px;border-radius:32px;background-color:#f3f3f3;text-align:center;}
+.popup-inner p{font-size:16px;margin-bottom:10px;}
+.popup-inner h2{margin-bottom:16px;margin-top:20px;font-size:32px;line-height:36px;font-weight:bold;}
+.popup-outer .button{display:block;color:#111;font-size:24px;margin:20px;}
+</style>
+<div class="popup-outer">
+	<div class="popup-inner">
+		${header1}${text1}
+		${header2}${text2}
+	<a href="#" class="button" onclick="skip();">OK</a>
+	</div>
+</div>`
+
+
+function skip(){
+	sessionStorage.setItem("skip",true);	
+	location.reload();
+}
+
+fetch('http://ip-api.com/json?fields=countryCode').then(function(response) {
+  return response.json();
+}).then(function(data) {
+  if (countryCodes.includes(data.countryCode) && !sessionStorage.getItem("skip")) {document.querySelector("body").innerHTML = popupBlock;} 
+}).catch(function() {
+  /* can't find the location */
+});
+</script>
+<!-- Pop-up code end. Source: github.com/roman-hart/popup/ Design by support-ukraine-now.webflow.io -->
+
