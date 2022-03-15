@@ -3,7 +3,7 @@
 
 Просто вставте код из файла <a href="https://github.com/roman-hart/popup/blob/main/for_russia.html">example.html</a> в конец страницы (перед тегом `</body>`).
 
-Результат:
+Результат (зависит от стилей):
 ![result](https://github.com/roman-hart/popup/blob/main/result.png?raw=true)
 
 # EN
